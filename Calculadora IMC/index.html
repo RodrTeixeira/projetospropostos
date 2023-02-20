@@ -9,20 +9,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Calculadora IMC</h1>
-    </header>
-    <section>
-        <br><div>NOME   : <input type="text" name="" id="name"></div>
-        <br><div>ALTURA : <input type="number" name="" id="height"></div>
-        <br><div>PESO   : <input type="number" name="" id="weight"></div>
-        <br><button id="calculate">Calcular</button><br>
-        <br><div id="result""> Resultado :</div>
-    </section>
-    <footer>
-        <p>&copy;By Projetos Propostos</p>
-
-    </footer>
+<main>
+    <div class="container">
+        <div class="title">Calculadora IMC</div>
+        <div>
+            <br><div class="input"><label>NOME   : </label><input type="text" name="" id="name"></div>
+            <br><div class="input"><label>ALTURA : </label><input type="number" name="" id="height"></div>
+            <br><div class="input"><label>PESO   : </label><input type="number" name="" id="weight"></div>
+            <br><button id="calculate">Calcular</button><br>
+            <br><div class="resulte" id="result"></div>
+        </div>
+    </div>
+</main>
     <script src="script.js"></script>
     
 </body>
