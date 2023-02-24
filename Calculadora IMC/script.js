@@ -6,7 +6,7 @@ function imc () {
     const height = document.getElementById('height').value;
     const weight = document.getElementById('weight').value;
     const result = document.getElementById('result');
-    console.log(name)
+    //console.log(name)
     //console.log(height)
     //console.log(weight)
     //console.log(result)
