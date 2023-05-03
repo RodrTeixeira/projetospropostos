@@ -1,5 +1,15 @@
+const Button = () => {
+    return <button>Meu button</button>
+}
+
+
 export const Dashboard = () => {
     return (
-        <h1>Hello World!!!</h1>
+        <div>
+            <h1>Hello World!!!</h1>
+            <Button />
+        </div>
+       
+
     )
 }
