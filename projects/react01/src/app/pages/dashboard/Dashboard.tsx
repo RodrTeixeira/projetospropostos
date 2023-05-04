@@ -1,15 +1,11 @@
-const Button = () => {
-    return <button>Meu button</button>
-}
+import { Link } from 'react-router-dom'
 
 
 export const Dashboard = () => {
     return (
         <div>
             <h1>Hello World!!!</h1>
-            <Button />
+            <Link to="/entrar">Login</Link>
         </div>
-       
-
     )
 }
