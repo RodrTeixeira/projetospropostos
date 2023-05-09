@@ -3,7 +3,7 @@ import { createContext } from "react";
 interface IUsuarioLogadoContextData {
     nomeDoUsuario: string
 }
-const UsuarioLogadoContext = createContext<IUsuarioLogadoContextData>({} as IUsuarioLogadoContextData)
+export const UsuarioLogadoContext = createContext<IUsuarioLogadoContextData>({} as IUsuarioLogadoContextData)
 
 interface IUsuarioLogadoProviderProps {
     children: React.ReactNode
@@ -11,7 +11,7 @@ interface IUsuarioLogadoProviderProps {
 
 export const UsuarioLogadoProvider: React.FC<IUsuarioLogadoProviderProps> = ({ children }) => {
     return (
-        <UsuarioLogadoContext.Provider value={{nomeDoUsuario: 'Lucas'}}>
+        <UsuarioLogadoContext.Provider value={{nomeDoUsuario: 'Banana'}}>
             {children}
         </UsuarioLogadoContext.Provider>
     )
