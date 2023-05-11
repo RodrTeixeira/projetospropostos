@@ -16,13 +16,13 @@ export const Login = () => {
         return email.length * 1000
     },[email.length])
 
-    useEffect(() => {
-        if (window.confirm('Você é Homem?')) {
-            console.log('Homem')
-        } else {
-            console.log('Mulher')
-        }
-    }, [])
+    // useEffect(() => {
+    //     if (window.confirm('Você é Homem?')) {
+    //         console.log('Homem')
+    //     } else {
+    //         console.log('Mulher')
+    //     }
+    // }, [])
 
     useEffect(() => {
         console.log(email)
