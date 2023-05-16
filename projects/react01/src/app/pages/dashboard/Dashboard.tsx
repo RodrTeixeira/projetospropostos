@@ -24,18 +24,18 @@ export const Dashboard = () => {
 
             e.currentTarget.value = ''
 
-            setLista((oldLista) => {
+            if (lista.some((ListItem) => ListItem.title === value)) return
 
-                if (oldLista.some((ListItem) => ListItem.title === value)) return oldLista
-
-                return [...oldLista, {
-                    id: oldLista.length,
-                    title: value,
-                    isCompleted: false,
-                }]
-            })
+            TarefasService.create({title: value,isCompleted: false})
+            .then((result) => {
+                if (result instanceof ApiException) {
+                    alert(result.message)
+                } else {
+                    setLista((oldLista) => [...oldLista, result,])
+                }
+            })      
         }
-    }, [])
+    }, [lista])
     
     return (
         <div>

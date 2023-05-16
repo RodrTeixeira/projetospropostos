@@ -1,7 +1,19 @@
 {
-    "tarefas": [
-      { "id": 1, 
-      "title": "tarefa 01", 
-      "isCompleted": false }
-    ]
-  }
+  "tarefas": [
+    {
+      "id": 1,
+      "title": "tarefa 01",
+      "isCompleted": false
+    },
+    {
+      "title": "tarefa 02",
+      "isCompleted": false,
+      "id": 2
+    },
+    {
+      "title": "tarefa 03",
+      "isCompleted": false,
+      "id": 3
+    }
+  ]
+}
