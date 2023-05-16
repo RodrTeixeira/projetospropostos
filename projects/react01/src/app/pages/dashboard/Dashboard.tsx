@@ -36,6 +36,31 @@ export const Dashboard = () => {
             })      
         }
     }, [lista])
+
+    const handleToggleComplete = useCallback((id: number) => {
+
+        const tarefaToUpdate = lista.find((tarefa) => tarefa.id === id)
+        if (!tarefaToUpdate) return
+
+        TarefasService.updateById(id, {
+            ...tarefaToUpdate,
+            isCompleted: !tarefaToUpdate.isCompleted,
+        })
+        .then((result) => {
+            if (result instanceof ApiException) {
+                alert(result.message)
+            } else {
+                setLista(oldLista => {
+                    return oldLista.map(oldListItem => {
+                        if (oldListItem.id === id) return result
+                        
+                        return oldListItem
+                       
+                    })
+                })      
+            }
+        })
+    }, [lista])
     
     return (
         <div>
@@ -43,22 +68,12 @@ export const Dashboard = () => {
            <input onKeyDown={handleInputKeyDown} />
            <p>{lista.filter((ListItem) => ListItem.isCompleted).length}</p>
            <ul>
-           {lista.map((ListItem, index) => {
+           {lista.map((ListItem) => {
             return <li key={ListItem.id}>
                 <input 
                 type="checkbox" 
                 checked={ListItem.isCompleted}
-                onChange={() => {
-                    setLista(oldLista => {
-                        return oldLista.map(oldListItem => {
-                            const newIsCompleted = oldListItem.title === ListItem.title ? !oldListItem.isCompleted : oldListItem.isCompleted
-                            return {
-                                ...oldListItem,
-                                isCompleted: newIsCompleted
-                            }
-                        })
-                    })
-                }}
+                onChange={() => handleToggleComplete(ListItem.id)}
                 />
                 {ListItem.title}</li>
            })}
