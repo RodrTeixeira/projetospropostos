@@ -8,6 +8,8 @@ Configurações:
 
 4) yarn add @mui/icons-material
 
+5) npx eslint --init
+
 
 Para iniciar:
 
