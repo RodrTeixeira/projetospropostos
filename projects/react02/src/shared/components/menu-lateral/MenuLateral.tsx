@@ -37,7 +37,7 @@ interface IAppThemeProviderProps {
 
 export const MenuLateral: React.FC<IAppThemeProviderProps>  = ({ children }) => {
     const theme = useTheme();
-    const smDown = useMediaQuery(theme.breakpoints.down('sm'));
+    const smDown = useMediaQuery(theme.breakpoints.down('md'));
 
     const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawerContext();
 
