@@ -11,6 +11,7 @@ interface ILayoutBaseDePaginaProps {
 
 export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({children, titulo, barraDeFerramentas}) => {
 
+    // 'sm'
     const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
     const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
     const theme = useTheme();
