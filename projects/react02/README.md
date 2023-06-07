@@ -10,6 +10,8 @@ Configurações:
 
 5) npx eslint --init
 
+6) yarn add -D json-server
+
 
 Para iniciar:
 
