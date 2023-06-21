@@ -12,9 +12,16 @@ Configurações:
 
 6) yarn add -D json-server
 
+7)  yarn add @unform/web @unform/core
+
 
 Para iniciar:
 
-npm start
+yarn start
 
 http://localhost:3000/
+
+
+Em outra tela do terminal:
+
+yarn mock
