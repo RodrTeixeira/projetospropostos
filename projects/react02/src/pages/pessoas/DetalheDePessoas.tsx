@@ -1,10 +1,8 @@
 import { Box, Grid, LinearProgress, Paper, Typography } from '@mui/material';
-import { FormHandles } from '@unform/core';
-import { Form } from '@unform/web';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { FerramentasDeDetalhe } from '../../shared/components';
-import { VTextField } from '../../shared/forms';
+import { VTextField, VForm, useVForm } from '../../shared/forms';
 import { LayoutBaseDePagina } from '../../shared/layouts';
 import { PessoasService } from '../../shared/services/api/pessoas/PessoasService';
 
@@ -19,7 +17,7 @@ export const DetalheDePessoas: React.FC = () => {
     const { id = 'nova' } = useParams<'id'>();
     const navigate = useNavigate(); 
 
-    const formRef = useRef<FormHandles>(null);
+    const { formRef } = useVForm();
 
     const [isLoading, setIsLoading] = useState(false);
     const [nome, setNome] = useState('');
@@ -39,6 +37,12 @@ export const DetalheDePessoas: React.FC = () => {
                         formRef.current?.setData(result);
                     }
                 });
+        } else {
+            formRef.current?.setData({
+                nomeCompleto: '',
+                email: '',
+                cidadeId: '',
+            });
         }
     }, [id]);
 
@@ -103,7 +107,7 @@ export const DetalheDePessoas: React.FC = () => {
             }
         >
         
-            <Form ref={formRef} onSubmit={handleSave}>
+            <VForm ref={formRef} onSubmit={handleSave}>
                 <Box margin={1} display='flex' flexDirection='column' component={Paper} variant='outlined'>
                 
                     <Grid container direction='column' padding={2} spacing={2}>
@@ -132,7 +136,7 @@ export const DetalheDePessoas: React.FC = () => {
                         </Grid>
                     </Grid>
                 </Box> 
-            </Form>
+            </VForm>
            
         </LayoutBaseDePagina>
         
