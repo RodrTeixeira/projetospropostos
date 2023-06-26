@@ -17,7 +17,7 @@ export const DetalheDePessoas: React.FC = () => {
     const { id = 'nova' } = useParams<'id'>();
     const navigate = useNavigate(); 
 
-    const { formRef } = useVForm();
+    const { formRef, save, saveAndClose, isSaveAndClose } = useVForm();
 
     const [isLoading, setIsLoading] = useState(false);
     const [nome, setNome] = useState('');
@@ -56,7 +56,11 @@ export const DetalheDePessoas: React.FC = () => {
                     if (result instanceof Error) {
                         alert(result.message);
                     } else {
-                        navigate(`/pessoas/detalhe/${result}`);
+                        if (isSaveAndClose()) {
+                            navigate('/pessoas');
+                        } else {
+                            navigate(`/pessoas/detalhe/${result}`);
+                        } 
                     }
                 });
         } else {
@@ -66,7 +70,11 @@ export const DetalheDePessoas: React.FC = () => {
                     setIsLoading(false);
                     if (result instanceof Error) {
                         alert(result.message);
-                    } 
+                    } else {
+                        if (isSaveAndClose()) {
+                            navigate('/pessoas');
+                        }
+                    }
                 });
         }
     };
@@ -97,8 +105,8 @@ export const DetalheDePessoas: React.FC = () => {
                     mostrarBotaoApagar={id !== 'nova'}
                     mostrarBotaoNovo={id !== 'nova'}
 
-                    aoClicarEmSalvar={() => formRef.current?.submitForm()}
-                    aoClicarEmSalvarEFechar={() => formRef.current?.submitForm()}
+                    aoClicarEmSalvar={save}
+                    aoClicarEmSalvarEFechar={saveAndClose}
                     aoClicarEmApagar={() => handleDelete(Number(id))}
                     aoClicarEmNovo={() => navigate('/pessoas/detalhe/nova')}
                     aoClicarEmVoltar={() => navigate('/pessoas')}
