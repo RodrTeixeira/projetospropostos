@@ -14,6 +14,8 @@ Configurações:
 
 7)  yarn add @unform/web @unform/core
 
+8) yarn add yup
+
 
 Para iniciar:
 
