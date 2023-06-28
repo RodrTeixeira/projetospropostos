@@ -2,7 +2,7 @@ import { Box, Grid, LinearProgress, Paper, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { FerramentasDeDetalhe } from '../../shared/components';
-import { VTextField, VForm, useVForm } from '../../shared/forms';
+import { VTextField, VForm, useVForm, IVFormErrors } from '../../shared/forms';
 import { LayoutBaseDePagina } from '../../shared/layouts';
 import { PessoasService } from '../../shared/services/api/pessoas/PessoasService';
 import * as yup from 'yup';
@@ -92,8 +92,13 @@ export const DetalheDePessoas: React.FC = () => {
                         });
                 }
             })
-            .catch((error: yup.ValidationError) => {
-                console.log(error.errors);
+            .catch((errors: yup.ValidationError) => {
+                const validationErrors: IVFormErrors = {};
+                errors.inner.forEach(error => {
+                    if (!error.path) return;
+                    validationErrors[error.path] = error.message;
+                });
+                formRef.current?.setErrors(validationErrors);
             });     
     };
 
