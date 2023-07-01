@@ -65,18 +65,12 @@
       "email": "jose@gmail.com",
       "cidadeId": 1,
       "nomeCompleto": "José Castro"
-    },
+    }
+  ],
+  "cidades": [
     {
-      "id": 16,
-      "nomeCompleto": "Fernando G",
-      "email": "fgomes@yahoo.com.br",
-      "cidadeId": "4"
-    },
-    {
-      "id": 17,
-      "nomeCompleto": "Ana Cunha",
-      "email": "cunha@hotmail.com",
-      "cidadeId": "3"
+      "nome": "Porto Alegre",
+      "id": 1
     }
   ]
 }
