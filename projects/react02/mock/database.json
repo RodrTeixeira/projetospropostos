@@ -71,6 +71,14 @@
     {
       "nome": "Porto Alegre",
       "id": 1
+    },
+    {
+      "nome": "Novo Hamburgo",
+      "id": 2
+    },
+    {
+      "nome": "Taquara",
+      "id": 3
     }
   ]
 }
