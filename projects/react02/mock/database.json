@@ -10,13 +10,13 @@
       "id": 4,
       "nomeCompleto": "Pedro Guilhermino Pereira",
       "email": "pedro@gmail.com",
-      "cidadeId": 1
+      "cidadeId": 3
     },
     {
       "id": 5,
+      "nomeCompleto": "José Castro",
       "email": "jose@gmail.com",
-      "cidadeId": 1,
-      "nomeCompleto": "José Castro"
+      "cidadeId": 2
     },
     {
       "id": 6,
@@ -26,9 +26,9 @@
     },
     {
       "id": 7,
+      "nomeCompleto": "Maria da Costa",
       "email": "maria@gmail.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Maria da Costa"
+      "cidadeId": 2
     },
     {
       "id": 8,
