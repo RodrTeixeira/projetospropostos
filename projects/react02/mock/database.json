@@ -80,5 +80,8 @@
       "nome": "Taquara",
       "id": 3
     }
-  ]
+  ],
+  "auth": {
+    "accessToken": "aaa.bbb.ccc"
+  }
 }
